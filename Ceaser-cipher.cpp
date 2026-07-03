@@ -3,8 +3,7 @@
 
 using namespace std;
 
-// This function receives text and shift and
-// returns the encrypted text
+// This function receives text and shift and returns the encrypted output
 string encrypt(string text, int s)
 {
     string result = "";
@@ -20,18 +19,16 @@ string encrypt(string text, int s)
         else
             result += char(int(text[i] + s - 97) % 26 + 97);
     }
-
-    // Return the resulting string
     return result;
 }
-
-// Driver program to test the above function
 int main()
 {
     string text="";
-    cout<<"Enter the text to be encrypted: ";
+    cout<<"Enter the text to be encrypted(Ceaser Cipher): ";
     getline(cin,text);
-    int s = 4;
+    int s;
+    cout<< "Enter the number of shifts: ";
+    cin>> s;
     cout << "Text : " << text;
     cout << "\nShift: " << s;
     cout << "\nCipher: " << encrypt(text, s);
